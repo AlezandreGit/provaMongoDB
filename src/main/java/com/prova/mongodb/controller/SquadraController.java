@@ -37,7 +37,7 @@ public class SquadraController {
 	@PostMapping
 	public ResponseEntity<Object> addSquadra(@RequestBody(required = false) Squadra squadra) {
 		LOGGER.debug("Chiamata alla addSquadra: " + squadra);
-		if (squadra == null) {
+		if (squadra == null || squadra.getNome() == null) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Empty Request");	
 		}
 		else {
