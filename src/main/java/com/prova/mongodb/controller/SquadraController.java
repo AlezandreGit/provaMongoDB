@@ -14,17 +14,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.prova.mongodb.model.Squadra;
-import com.prova.mongodb.service.SquadraService;
+import com.prova.mongodb.service.SquadraServiceImpl;
 
 @RestController
 @RequestMapping("/api/squadra")
 public class SquadraController {
 	
 	private static final Logger LOGGER = LogManager.getLogger(SquadraController.class);
-	private SquadraService squadraService;
+	private SquadraServiceImpl squadraService;
 	
 	@Autowired
-	public SquadraController(SquadraService squadraService) {
+	public SquadraController(SquadraServiceImpl squadraService) {
 		this.squadraService = squadraService;
 	}
 	
